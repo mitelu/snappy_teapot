@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "starting the node server"
+
+sudo node node1

@@ -1,0 +1,9 @@
+name: hello-world.canonical
+version: 1.0.5
+vendor: Michael Vogt <mvo@ubuntu.com>
+icon: meta/hello.svg
+binaries:
+ - name: bin/echo
+ - name: bin/env
+ - name: bin/evil
+

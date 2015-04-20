@@ -1,0 +1,15 @@
+name: teapot.mitelu
+version: 1.0.0
+vendor: Alex Maties <alex@mitelu.com>
+
+binaries:
+ - name: bin/echo
+ - name: bin/env
+
+services:
+ - name: node1
+   description: "software that powers the teapot device to remind people not to cause stove accidents"
+   start: ./node1
+ports:
+ required: 80
+

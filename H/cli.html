@@ -1,0 +1,27 @@
+
+
+<html>
+
+
+<body>
+<script src="https://cdn.firebase.com/js/client/2.2.3/firebase.js"></script>
+
+<script>
+
+	var fb = new Firebase('https://teapot1.firebaseio.com/')
+
+  fb.on("value", function(data) {
+  var name = data.val() ? data.val().name : "";
+  alert("My name is " + name);
+});
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+var PythonShell = require('python-shell');
+
+var temp = 0;
+var timer= 0;
+
+PythonShell.defaultOptions = { scriptPath: '/home/pi/Desktop/H/python' };
+
+
+
+function dis(){
+
+
+var pyshell = new PythonShell('t2.py');
+
+pyshell.on('message', function (message) {
+  // received a message sent from the Python script (a simple "print" statement)
+  console.log(message);
+  console.log('temp is '+temp)
+  if(message<100 && timer==0){
+	console.log('gradma in front of oven -- testing for passby or operating the stove');
+	setTimeout(function(){
+         temp=message;
+	 dis()
+	},3000);
+
+	  if(temp!=0){
+	
+		
+		console.log('timer started')
+		timer++;
+		console.log('timer ='+timer)
+	  }
+
+
+ 
+
+  }
+  else{
+	console.log('no one there')
+ 	setTimeout(function(){
+        temp=0;
+	 dis()
+	},3000);
+  }
+        
+
+});
+}
+
+dis()
